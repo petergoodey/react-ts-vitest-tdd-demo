@@ -45,7 +45,7 @@ bun install -d @types/jest
 
 And add the following test script in the `package.json` file:
 
-```JavaScript
+```js
   "scripts": {
     ...
     "test" : "vitest"
@@ -54,7 +54,7 @@ And add the following test script in the `package.json` file:
 
 Now we need to add a couple of references and modify a test section to the `vite.config.ts` so it looks something like teh following:
 
-```JavaScript
+```js
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
@@ -77,13 +77,13 @@ export default defineConfig({
 
 Create the `src/test/setup.ts` file with the following line:
 
-```JavaScript
+```js
 import '@testing-library/jest-dom'
 ```
 
 Additionaly cretae a `src/test/test-utils.tsx` file with the following content:
 
-```JavaScript
+```js
 import { cleanup, render } from '@testing-library/react'
 import { afterEach } from 'vitest'
 
@@ -107,7 +107,7 @@ export { customRender as render }
 
 Finally we are ready to add a test for the App.tsx. Create a file `src/App.test.tsx` with the following content:
 
-```JavaScript
+```js
 import App from './App'
 import { render, screen, userEvent } from './test/test-utils'
 
@@ -126,33 +126,13 @@ Now we are ready to run our test:
 ```bash
 bun run test
 ```
-# React + TypeScript + Vite
+## Getting started with TDD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hopefully the last command passed successfully and ranvery quickly! 
 
-Currently, two official plugins are available:
+You should now be in a position to clean up the example `App` code and start writing your tests and then your code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Here are some articles for further reading:
+* [EricWinkDev Video this is partially based on](https://www.youtube.com/watch?v=G-4zgIPsjkU)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* [TDD with React and Typescript](https://dev.to/pauleveritt/react-typescript-and-tdd-1ne7)
