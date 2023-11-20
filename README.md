@@ -128,14 +128,12 @@ bun run test
 ```
 ## Getting started with TDD
 
-Hopefully the last command passed successfully and ran very quickly! 
-
-
+By default Vitest will run in watch mode so that if you save any files the tests will re-run. This is perfect for TDD.
 
 You should now be in a position to clean up the example `App` code and start writing your tests and then your code.
 
 Here are some articles for further reading:
-* [EricWinkDev Video this is partially based on](https://www.youtube.com/watch?v=G-4zgIPsjkU)
+* [The EricWinkDev Video this is partially based on](https://www.youtube.com/watch?v=G-4zgIPsjkU)
 
 * [TDD with React and Typescript](https://dev.to/pauleveritt/react-typescript-and-tdd-1ne7)
 
