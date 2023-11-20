@@ -139,4 +139,4 @@ Here are some articles for further reading:
 
 * [TDD with React and Typescript](https://dev.to/pauleveritt/react-typescript-and-tdd-1ne7)
 
-* [Vite Community Temlplates](https://github.com/vitejs/awesome-vite#templates)
+* [Vite Community Templates](https://github.com/vitejs/awesome-vite#templates)
