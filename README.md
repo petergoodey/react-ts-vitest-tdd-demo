@@ -128,7 +128,9 @@ bun run test
 ```
 ## Getting started with TDD
 
-Hopefully the last command passed successfully and ranvery quickly! 
+Hopefully the last command passed successfully and ran very quickly! 
+
+
 
 You should now be in a position to clean up the example `App` code and start writing your tests and then your code.
 
@@ -136,3 +138,5 @@ Here are some articles for further reading:
 * [EricWinkDev Video this is partially based on](https://www.youtube.com/watch?v=G-4zgIPsjkU)
 
 * [TDD with React and Typescript](https://dev.to/pauleveritt/react-typescript-and-tdd-1ne7)
+
+* [Vite Community Temlplates](https://github.com/vitejs/awesome-vite#templates)
