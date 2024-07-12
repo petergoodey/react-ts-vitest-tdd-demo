@@ -12,7 +12,20 @@ This project is the templated react typescript swc app with AFAIK the minimum co
 ## Pre-requisites
 NB I am using WSL with VSCode on Windows using VS Code Server
 
-You should of course have [NodeJS](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) installed.
+You should of course have [NodeJS](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) installed - version 20+
+
+## Why Vitest over Jest?
+
+Vitest is completely compatible with Jest and uses Jest under the hood. However it takes has the following advantages:
+
+* It takes away a lot of the configuration
+* It handles image and svg files without mocks.
+* It's faster
+* Fewer packages meaning less of a maintenaance headache.
+
+Create React App (CRA) has to add a lot of dependencies to make jest work out of the book - in particular react-scripts. At the time of writing creating a React app using CRA meant that 1473 packages and some 30 deprecation warnings. In addition 2 packages had moderate vulnerability warnings and 6 had high. This is even after an upgradea dn audit fix. One of thses was a memory leak in a dependency of react-scripts. So you are behind on your package maintenance before you even start.
+
+At the same time the application created here using Vite and Vitest only needed 312 total packages and 5 deprecation warnings to perform the same functionality.
 
 ## Setup and run a React/Typescript project with Vite
 We'll use the template to create our app and install and test everything works correctly.
