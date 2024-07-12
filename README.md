@@ -32,7 +32,7 @@ We'll use the template to create our app and install and test everything works c
 
 Note that we are using the [Speedy Web Compiler (swc)](https://swc.rs/) vite template rather than the Babel-based [Hot Module Replacment (HMR)]()
 ```bash
-yarn create-vite react-ts-vitest-tdd-demo --template react-swc-ts
+yarn create vite react-ts-vitest-tdd-demo --template react-swc-ts
 cd react-ts-vitest-tdd-demo
 yarn
 yarn dev
@@ -44,12 +44,8 @@ You should now have your vite app up and running.
 First we need to install the dev dependencies packages:
 
 ```bash
-yarn add -D vitest
-yarn add -D jsdom
-yarn add -D @testing-library/react
-yarn add -D @testing-library/jest-dom 
-yarn add -D @testing-library/user-event 
-yarn add -D @types/jest
+yarn add -D vitest @vitejs/plugin-react jsdom
+yarn add -D @testing-library/react @testing-library/jest-dom @testing-library/dom @testing-library/user-event @types/jest
 ```
 
 And add the following test script in the `package.json` file:
@@ -90,9 +86,9 @@ Create the `src/test/setup.ts` file with the following line:
 import '@testing-library/jest-dom'
 ```
 
-Additionaly cretae a `src/test/test-utils.tsx` file with the following content:
+Additionaly cretae a `src/test/test-utilities.tsx` file with the following content:
 
-```js
+```typescript
 import { cleanup, render } from '@testing-library/react'
 import { afterEach } from 'vitest'
 
@@ -100,7 +96,7 @@ afterEach(() => {
   cleanup()
 })
 
-function customRender(ui: React.ReactElement, options = {}) {
+function customRenderer(ui: React.ReactElement, options = {}) {
   return render(ui, {
     // wrap provider(s) here if needed
     wrapper: ({ children }) => children,
@@ -108,17 +104,17 @@ function customRender(ui: React.ReactElement, options = {}) {
   })
 }
 
-export * from '@testing-library/react'
+export { screen } from '@testing-library/react'
 export { default as userEvent } from '@testing-library/user-event'
 // override render export
-export { customRender as render }
+export { customRenderer as render }
 ```
 
 Finally we are ready to add a test for the App.tsx. Create a file `src/App.test.tsx` with the following content:
 
 ```js
 import App from './App'
-import { render, screen, userEvent } from './test/test-utils'
+import { render, screen, userEvent } from './test/test-utilities'
 
 describe('Simple working test', () => {
 
