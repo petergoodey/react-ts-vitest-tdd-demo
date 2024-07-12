@@ -1,5 +1,6 @@
+import '@testing-library/jest-dom'
 import App from './App'
-import { render, screen, userEvent } from './test/test-utils'
+import { render, screen, userEvent } from './test/custom-renderer'
 
 describe('Simple working test', () => {
 

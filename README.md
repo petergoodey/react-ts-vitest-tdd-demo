@@ -20,8 +20,8 @@ Vitest is completely compatible with Jest and uses Jest under the hood. However 
 
 * It takes away a lot of the configuration
 * It handles image and svg files without mocks.
-* It's faster
-* Fewer packages meaning less of a maintenaance headache.
+* It's faster.
+* Less package bloat (see below)
 
 Create React App (CRA) has to add a lot of dependencies to make jest work out of the book - in particular react-scripts. At the time of writing creating a React app using CRA meant that 1473 packages and some 30 deprecation warnings. In addition 2 packages had moderate vulnerability warnings and 6 had high. This is even after an upgradea dn audit fix. One of thses was a memory leak in a dependency of react-scripts. So you are behind on your package maintenance before you even start.
 
