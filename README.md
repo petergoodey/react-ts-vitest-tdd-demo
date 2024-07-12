@@ -12,21 +12,17 @@ This project is the templated react typescript swc app with AFAIK the minimum co
 ## Pre-requisites
 NB I am using WSL with VSCode on Windows using VS Code Server
 
-You should of course have [NodeJS](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) installed. I will be using [bun](https://bun.sh/docs/installation) as a package manager as it is significantly faster than npm or yarn:
-
-```bash
-npm install -g bun
-```
+You should of course have [NodeJS](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) installed.
 
 ## Setup and run a React/Typescript project with Vite
 We'll use the template to create our app and install and test everything works correctly.
 
 Note that we are using the [Speedy Web Compiler (swc)](https://swc.rs/) vite template rather than the Babel-based [Hot Module Replacment (HMR)]()
 ```bash
-bunx create-vite react-ts-vitest-tdd-demo --template react-swc-ts
+yarn create-vite react-ts-vitest-tdd-demo --template react-swc-ts
 cd react-ts-vitest-tdd-demo
-bun install
-bun run dev
+yarn
+yarn dev
 ```
 You should now have your vite app up and running.
 
@@ -35,12 +31,12 @@ You should now have your vite app up and running.
 First we need to install the dev dependencies packages:
 
 ```bash
-bun install -d vitest
-bun install -d jsdom
-bun install -d @testing-library/react
-bun install -d @testing-library/jest-dom 
-bun install -d @testing-library/user-event 
-bun install -d @types/jest
+yarn add -D vitest
+yarn add -D jsdom
+yarn add -D @testing-library/react
+yarn add -D @testing-library/jest-dom 
+yarn add -D @testing-library/user-event 
+yarn add -D @types/jest
 ```
 
 And add the following test script in the `package.json` file:
@@ -124,7 +120,7 @@ describe('Simple working test', () => {
 Now we are ready to run our test:
 
 ```bash
-bun run test
+yarn test
 ```
 ## Getting started with TDD
 
