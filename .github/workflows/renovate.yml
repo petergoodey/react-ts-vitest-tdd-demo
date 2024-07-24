@@ -12,6 +12,6 @@ jobs:
       - name: Run Renovate
         uses: docker://renovate/renovate:19.133-slim
         env:
-          RENOVATE_REPOSITORIES: <owner/repository-name>
+          RENOVATE_REPOSITORIES: renovatebot/renovatebot.github.io
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           RENOVATE_AUTOMERGE: true # optional, see below
